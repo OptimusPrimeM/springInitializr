@@ -80,12 +80,12 @@ public class Book {
 
         Book book = (Book) o;
 
-        return id == book.id;
+        return id != null ? id.equals(book.id) : book.id == null;
     }
 
     @Override
     public int hashCode() {
-        return (int) (id ^ (id >>> 32));
+        return id != null ? id.hashCode() : 0;
     }
 
     @Override

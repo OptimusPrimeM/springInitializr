@@ -62,12 +62,12 @@ public class Author {
 
         Author author = (Author) o;
 
-        return id == author.id;
+        return id != null ? id.equals(author.id) : author.id == null;
     }
 
     @Override
     public int hashCode() {
-        return (int) (id ^ (id >>> 32));
+        return id != null ? id.hashCode() : 0;
     }
 
     @Override
